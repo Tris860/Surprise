@@ -59,6 +59,22 @@
             border: none;
             cursor: pointer;
         }
+        .start_menu{
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2{
+            margin:2% 0%;
+            padding:1% 0%;
+            color: white;
+            margin-top: 10px;
+            font-family: 'Arial', sans-serif;
+        }
+        .start_menu h2 span{
+            color: #dc2626;
+        }
         .start-button:hover {
             background-color: #b91c1c; /* hover:bg-red-700 */
         }
@@ -83,9 +99,11 @@
     </style>
 </head>
 <body>
-    <button id="startBtn" class="start-button">
-        Click to view
-    </button>
+    <div class="start_menu" id="startMenu">
+        <button id="startBtn" class="start-button">Click to view</button>
+        <h2>Developed by <span>Tris</span> Tech Hub</h2>
+    </div>
+    
     <canvas id="canvas"></canvas>
     <div id="text-container">
         <div id="main-text"></div>
@@ -181,7 +199,7 @@
         }
 
         // --- Typewriter Effect ---
-        const mainTextContent = "I Love you Aula";
+       /* const mainTextContent = "I Love you Aula";
         const poemLines = [
             "I miss you more than silence misses sound,",
             "like stars that ache for morning to be found.",
@@ -189,6 +207,11 @@
             "I care for you deeply, every day of the week.",
             "Remember that",
             "From your psycho.jr 7"
+        ]; */
+        const mainTextContent = "I Love you ";
+        const poemLines = [
+            "your message to ......,",
+            "From your Someone"
         ];
         let currentMainTextIndex = 0;
         let currentPoemLine = 0;
@@ -284,6 +307,7 @@
         // --- Event Listeners and Initial Setup ---
         startBtn.addEventListener('click', () => {
             // First, start the animation.
+            document.getElementById('startMenu').style.display = 'none';
             startBtn.style.display = 'none';
             animationStart = null; // Reset animation timer
             requestAnimationFrame(animate);
